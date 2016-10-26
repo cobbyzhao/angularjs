@@ -12,10 +12,6 @@
     myApp.config(function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.when("", "/");
         $stateProvider
-            .state("home", {
-                url: "/",
-                templateUrl: "./partials/home.html"
-            })
             .state("tab1", {
                 url: "/tab1",
                 templateUrl: "./partials/tab1.html"
@@ -35,7 +31,16 @@
 
 <body ng-app="myApp">
     <small>AngularJS Demo</small>
-    <div ui-view=""></div>
+    <div>
+    <ul class="nav nav-pills">
+        <li ui-sref="tab1"><a href="">tab1</a></li>
+        <li ui-sref="tab2"><a href="">tab2</a></li>
+        <li ui-sref="tab3"><a href="">tab3</a></li>
+    </ul>
+    <div>
+        <div ui-view="" />
+    </div>
+</div></div>
 </body>
 
 </html>
